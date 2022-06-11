@@ -14,23 +14,6 @@ const links: { label: string; href: string }[] = [
 ];
 
 export const MenuItems: FC<Props> = ({ isMobile, isActive, setIsActive }) => {
-  // const generateLink = (index: number) => {
-  //   switch (index) {
-  //     case 0:
-  //       return '/';
-  //       break;
-  //     case 1:
-  //       return '/created-nfts';
-  //       break;
-  //     case 2:
-  //       return '/my-nfts';
-  //       break;
-  //     default:
-  //       return '/';
-  //       break;
-  //   }
-  // };
-
   return (
     <ul className={`list-none flexCenter flex-row ${isMobile && 'flex-col h-full'}`}>
       {links.map((item, index) => (
