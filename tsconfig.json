@@ -17,9 +17,10 @@
     "incremental": true,
     "paths": {
       "@components": ["./components/index.ts"],
+      "@assets": ["./assets/index.js"],
       "@pages/*": ["./src/pages/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/assets/index.js"],
   "exclude": ["node_modules"]
 }

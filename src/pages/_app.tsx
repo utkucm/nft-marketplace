@@ -1,15 +1,17 @@
-import '../styles/globals.css';
-import type { AppProps } from 'next/app';
 import Script from 'next/script';
+import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
+import '../styles/globals.css';
 
 import { Navbar, Footer } from '@components';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
-  <ThemeProvider attribute="class">
+  <ThemeProvider attribute="class" defaultTheme="light">
     <div className="dark:bg-nft-dark bg-white min-h-screen">
       <Navbar />
-      <Component {...pageProps} />
+      <div className="pt-65">
+        <Component {...pageProps} />
+      </div>
       <Footer />
     </div>
 
