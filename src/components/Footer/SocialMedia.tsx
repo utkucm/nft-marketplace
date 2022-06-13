@@ -6,14 +6,21 @@ import images from '@assets';
 
 // TODO: REFACTOR LINKS
 
+const socialMediaLinks = [
+  { id: 0, image: images.instagram, href: '/' },
+  { id: 1, image: images.twitter, href: '/' },
+  { id: 2, image: images.telegram, href: '/' },
+  { id: 3, image: images.discord, href: '/' },
+];
+
 export const SocialMedia = () => {
   const { theme } = useTheme();
 
   return (
     <div className="flex flex-row sm:mt-4">
-      {[images.instagram, images.twitter, images.telegram, images.discord].map((image, index) => (
-        <div key={index} className="mx-2 cursor-pointer">
-          <Link href="/">
+      {socialMediaLinks.map(({ id, image, href }) => (
+        <Link key={id} href={href} passHref>
+          <div className="mx-2 cursor-pointer">
             <Image
               src={image}
               alt="social media"
@@ -22,8 +29,8 @@ export const SocialMedia = () => {
               height={24}
               className={theme === 'light' ? 'filter invert' : ''}
             />
-          </Link>
-        </div>
+          </div>
+        </Link>
       ))}
     </div>
   );

@@ -1,14 +1,22 @@
-import Image from 'next/image';
-import { useTheme } from 'next-themes';
-
 import { Logo } from '@components';
-import { FooterLinks, EmailContact } from '.';
-import images from '@assets';
-import { SocialMedia } from './SocialMedia';
+import { FooterLinks, EmailContact, SocialMedia } from '.';
+
+const footerLinks = {
+  first: [
+    { id: 0, label: 'Explore', href: '/explore' },
+    { id: 1, label: 'How It Works', href: '/how-it-works' },
+    { id: 2, label: 'Contact Us', href: '/contact-us' },
+    { id: 3, label: 'FAQ', href: '/faq' },
+  ],
+  second: [
+    { id: 0, label: 'Help Center', href: '/help-center' },
+    { id: 1, label: 'Terms of Service', href: '/terms-of-service' },
+    { id: 2, label: 'Legal', href: '/legal' },
+    { id: 3, label: 'Privacy Policy', href: '/privacy-policy' },
+  ],
+};
 
 export const Footer = () => {
-  const { theme } = useTheme();
-
   return (
     <footer className="flexCenter flex-col border-t dark:border-nft-black-1 border-nft-gray-1 sm:py-8 py-16">
       <div className="w-full minmd:w-4/5 flex flex-row md:flex-col sm:px-4 px-16">
@@ -20,8 +28,8 @@ export const Footer = () => {
           <EmailContact />
         </div>
         <div className="flex-1 flexBetweenStart flex-wrap ml-10 md:ml-0 md:mt-8">
-          <FooterLinks label="RethjaMarkt" links={['Explore', 'How It Works', 'Contact Us']} />
-          <FooterLinks label="Support" links={['Help Center', 'Terms of Service', 'Legal', 'Privacy Policy']} />
+          <FooterLinks label="RethjaMarkt" links={footerLinks.first} />
+          <FooterLinks label="Support" links={footerLinks.second} />
         </div>
       </div>
 
