@@ -13,7 +13,7 @@ export const Logo = () => {
         </div>
       </Link>
       <Link href="/">
-        <div className="hidden md:flex" onClick={() => {}}>
+        <div className="hidden md:flex cursor-pointer" onClick={() => {}}>
           <Image src={images.logo02} objectFit="fill" width={32} height={32} alt="Logo" />
         </div>
       </Link>
