@@ -1,9 +1,12 @@
+import Link from 'next/link';
 import { FC } from 'react';
 
 interface Props {
   label: string;
   links: string[];
 }
+
+// TODO: REFACTOR LINks
 
 export const FooterLinks: FC<Props> = ({ label, links }) => {
   return (
@@ -14,7 +17,7 @@ export const FooterLinks: FC<Props> = ({ label, links }) => {
           key={index}
           className="font-poppins dark:text-white text-nft-black-1 font-normal cursor-pointer dark:hover:text-nft-gray-1 hover:text-nft-black-1 my-3"
         >
-          {link}
+          <Link href="/">{link}</Link>
         </p>
       ))}
     </div>
