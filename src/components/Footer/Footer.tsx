@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 
-import { Button } from '@components';
+import { Button, Logo } from '@components';
 import { FooterLinks } from '.';
 import images from '@assets';
 
@@ -12,10 +12,7 @@ export const Footer = () => {
     <footer className="flexCenter flex-col border-t dark:border-nft-black-1 border-nft-gray-1 sm:py-8 py-16">
       <div className="w-full minmd:w-4/5 flex flex-row md:flex-col sm:px-4 px-16">
         <div className="flexStart flex-1 flex-col">
-          <div className="flexCenter cursor-pointer">
-            <Image src={images.logo02} objectFit="fill" width={32} height={32} alt="Logo" />
-            <p className="dark:text-white text-nft-black-1 font-semibold text-lg ml-1">RethjaMarkt</p>
-          </div>
+          <Logo hideText={false} />
           <p className="font-poppins dark:text-white text-nft-black-1 font-semibold text-base mt-6">
             Get the latest updates
           </p>
